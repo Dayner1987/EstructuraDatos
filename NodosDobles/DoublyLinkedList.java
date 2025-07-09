@@ -1,11 +1,12 @@
-// DoublyLinkedList.java
 public class DoublyLinkedList {
     private Nodo2 head;
     private Nodo2 tail;
+    public static Nodo2 currentS;
 
     public DoublyLinkedList() {
         this.head = null;
         this.tail = null;
+        currentS = null;
     }
 
     public void add(int data) {
@@ -49,25 +50,36 @@ public class DoublyLinkedList {
     }
 
     public void printFirst() {
-        System.out.println(head.data);
+            currentS = head;
+            System.out.println(currentS.data);
     }
+
     public void printLast() {
-        System.out.println(tail.data);
+            currentS = tail;
+            System.out.println(currentS.data);
     }
 
     public void printNext() {
-        if (head != null && head.next != null) {
-            System.out.println(head.next.data);
+        if (currentS != null && currentS.next != null) {
+            currentS = currentS.next;
+            System.out.println(currentS.data);
+
+        } else if (currentS == null) {
+            System.out.println("No start navegation.");
         } else {
-            System.out.println("No more numbers to next");
+            System.out.println("No next element (value=null).");
         }
     }
 
     public void printPrevious() {
-        if (tail != null && tail.prev != null) {
-            System.out.println(tail.prev.data);
+        if (currentS != null && currentS.prev != null) {
+            currentS = currentS.prev;
+            System.out.println(currentS.data);
+
+        } else if (currentS == null) {
+            System.out.println("No start navegation.");
         } else {
-            System.out.println("No more previus tail");
+            System.out.println("No previous element(value=null).");
         }
     }
 
@@ -80,5 +92,4 @@ public class DoublyLinkedList {
         }
         return count;
     }
-
 }

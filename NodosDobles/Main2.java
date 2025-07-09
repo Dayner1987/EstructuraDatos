@@ -61,7 +61,7 @@ public class Main2 {
     }
     static void optionTwo(DoublyLinkedList list2){
         if(list2.size()==0){
-            System.out.println("Error!!! No numers registred!!");
+            System.out.println("Error!!! No numbers registred!!");
         }else{
             System.out.print("\tlist Numbers: ");
             list2.printList();
@@ -71,7 +71,7 @@ public class Main2 {
     static void optionThree(DoublyLinkedList list2){
 
         if(list2.size()==0){
-            System.out.println("Error!!! No numers registred!!");
+            System.out.println("Error!!! No numbers registred!!");
         }else{
             System.out.print("\tlist Numbers Reverse: ");
             list2.printListReverse();
@@ -80,7 +80,7 @@ public class Main2 {
     }
     static void optionFour(DoublyLinkedList list2){
         if(list2.size()==0){
-            System.out.println("Error!!! No numers registred!!");
+            System.out.println("Error!!! No numbrs registred!!");
         }else{
             System.out.print("\tFirt Number: ");
             list2.printFirst();
@@ -89,16 +89,16 @@ public class Main2 {
     }
     static void optionFive(DoublyLinkedList list2){
         if(list2.size()==0){
-            System.out.println("Error!!! No numers registred!!");
+            System.out.println("Error!!! No numbers registred!!");
         }else{
-            System.out.println("\tLast Number: ");
+            System.out.print("\tLast Number: ");
             list2.printLast();
         }
 
     }
     static void optionSix(DoublyLinkedList list2){
         if(list2.size()==0){
-            System.out.println("Error!!! No numers registred!!");
+            System.out.println("Error!!! No numbers registred!!");
         }else{
             System.out.print ("\tNext Number: ");
             list2.printNext();
@@ -107,7 +107,7 @@ public class Main2 {
     }
     static void optionSeven(DoublyLinkedList list2){
         if(list2.size()==0){
-            System.out.println("Error!!! No numers registred!!");
+            System.out.println("Error!!! No numbers registred!!");
         }else{
             System.out.print ("\tPrevius Number: ");
             list2.printPrevious();
