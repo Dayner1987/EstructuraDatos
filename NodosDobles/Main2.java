@@ -35,11 +35,17 @@ public class Main2 {
                     optionSeven(list2);
                     break;
                 case 8:
+                    optionEitgh(list2);
+                    break;
+                case 9:
+                    optionNine(list2);
+                    break;
+                case 10:
                     System.out.println("Thanks for your preference!!!");
                     break;
 
             }
-        }while(res!=8);
+        }while(res!=10);
     }
     static void printMenu(){
         System.out.println("****** MENU ******");
@@ -50,7 +56,9 @@ public class Main2 {
         System.out.println("5.Show Last");
         System.out.println("6.Show Next");
         System.out.println("7.Show Previous");
-        System.out.println("8.Exit");
+        System.out.println("8.Drop Nodo");
+        System.out.println("9.Current Nodo");
+        System.out.println("10.Exit");
 
     }
 
@@ -112,7 +120,24 @@ public class Main2 {
             System.out.print ("\tPrevius Number: ");
             list2.printPrevious();
         }
+    }
+    static void optionEitgh(DoublyLinkedList list2) {
+        if (list2.size() == 0) {
+            System.out.println("Error!!! No numbers registred!!");
+        } else {
+            System.out.print("\tPlease Insert value Nodo:");
+            int n= lector.nextInt();
+            list2.delete(n);
 
+        }
+    }
+    static void optionNine(DoublyLinkedList list2) {
+        if (list2.size() == 0) {
+            System.out.println("Error!!! No numbers registred!!");
+        } else {
+            System.out.print("\tThe actual Nodo value is: ");
+            list2.currentNodo();
+        }
+    }
 
     }
-}

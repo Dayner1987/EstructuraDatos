@@ -3,12 +3,12 @@ public class DoublyLinkedList {
     private Nodo2 tail;
     public static Nodo2 currentS;
 
+
     public DoublyLinkedList() {
         this.head = null;
         this.tail = null;
         currentS = null;
     }
-
     public void add(int data) {
         Nodo2 newNode = new Nodo2(data);
         if (head == null) {
@@ -18,6 +18,7 @@ public class DoublyLinkedList {
             newNode.prev = tail;
             tail = newNode;
         }
+        currentS=newNode;
     }
 
     public void addFirst(int data) {
@@ -92,4 +93,47 @@ public class DoublyLinkedList {
         }
         return count;
     }
+
+    public void delete(int data) {
+        Nodo2 actual = head;
+
+        while (actual != null) {
+            if (actual.data == data) {
+                ///Delete in head
+                if (actual == head) {
+                    head = actual.next;
+                    if (head != null) {
+                        head.prev = null;
+                    } else {
+                        tail = null;
+                    }
+                    /// delete in tail
+                } else if (actual == tail) {
+                    tail = actual.prev;
+                    if (tail != null) {
+                        tail.next = null;
+                    }
+                } else {
+                    //nodo in med
+                    actual.prev.next = actual.next;
+                    actual.next.prev = actual.prev;
+                }
+
+                if (actual == currentS) {
+                    currentS = actual.next != null ? actual.next : actual.prev;
+                }
+
+                System.out.println("Value " + data + " is deleted");
+                return;
+            }
+
+            actual = actual.next;
+        }
+
+        System.out.println("Value " + data + " not found in the list");
+    }
+    public void currentNodo(){
+        System.out.println(currentS.data);
+    }
+
 }
